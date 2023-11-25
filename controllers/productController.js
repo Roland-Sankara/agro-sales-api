@@ -3,7 +3,7 @@ const prisma = new PrismaClient();
 
 async function getProducts(req, res){
     const products = await prisma.product.findMany()
-    res.status(200).json({message: "success", products})
+    res.send(products)
 }
 
 module.exports = getProducts;

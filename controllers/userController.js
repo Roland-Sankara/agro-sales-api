@@ -6,4 +6,14 @@ async function getUsers(req, res){
     res.send(users)
 }
 
-module.exports = getUsers;
+async function createUser(req, res){
+    const user = await prisma.user.create({
+        data: req.body
+    })
+    res.status(201).json({message:"sucess", user})
+}
+
+module.exports = {
+    getUsers,
+    createUser
+}

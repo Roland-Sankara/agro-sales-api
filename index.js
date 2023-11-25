@@ -5,6 +5,7 @@ const productsRouter = require("./routes/productsRouter");
 const server = express();
 
 // middleware
+server.use(express.json())
 server.use("/api/v1/users", userRouter);
 server.use("/api/v1/products", productsRouter);
 server.use("/api/v1/categories", categoriesRouter);

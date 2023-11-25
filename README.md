@@ -78,3 +78,36 @@ npx prisma migrate dev --name initial
 ## Query the Database
 const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
+
+
+# Deploying App to render
+Render is a PaaS (Platform As A Service).  
+
+
+
+## Database
+if you had data locally and you want to add data to it, you do the following
+- Run migrations against new DB
+```bash
+npx prisma migrate deploy
+```
+- create a database dump
+
+```bash
+pg_dump --host=localhost --port=5432 --username=postgress --dbname=mydb > db_export.sql
+```
+
+then to import that sql file into the remot db, you need to access the DB from PSQL
+then run the following command
+```bash
+\i db_export.sql
+```
+
+## Using JWT
+Docs: https://github.com/auth0/node-jsonwebtoken
+
+### Sign a Token
+jwt.sign(payload, secretOrPrivateKey, [options, callback])
+
+### Verify
+jwt.verify(token, secretOrPublicKey, [options, callback])

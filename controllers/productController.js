@@ -6,4 +6,18 @@ async function getProducts(req, res){
     res.send(products)
 }
 
-module.exports = getProducts;
+async function createProduct(req, res){
+    try{
+        const products = await prisma.product.create({
+            data: req.body
+        })
+        res.status(201).json({message: "Success", products})
+    }catch(error){
+        res.statues(400).json({error})
+    }
+}
+
+module.exports = {
+    getProducts,
+    createProduct
+}

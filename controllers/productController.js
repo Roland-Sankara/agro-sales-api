@@ -13,7 +13,7 @@ async function createProduct(req, res){
         })
         res.status(201).json({message: "Success", products})
     }catch(error){
-        res.statues(400).json({error})
+        res.status(400).json({error})
     }
 }
 

@@ -107,7 +107,7 @@ then run the following command
 Docs: https://github.com/auth0/node-jsonwebtoken
 
 ### Sign a Token
-jwt.sign(payload, secretOrPrivateKey, [options, callback])
+jwt.sign(payload, secretOrPrivateKey, {})
 
 ### Verify
 jwt.verify(token, secretOrPublicKey, [options, callback])

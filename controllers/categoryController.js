@@ -10,4 +10,18 @@ async function getCategories(req, res){
     }
 }
 
-module.exports = getCategories;
+async function createCategory(req, res){
+    try {
+        const category = await prisma.category.create({
+            data: req.body
+        });
+        res.status(200).json({message: "Success", category});
+    } catch (error) {
+        res.status(400).json({error})
+    }
+}
+
+module.exports = {
+    getCategories,
+    createCategory
+};

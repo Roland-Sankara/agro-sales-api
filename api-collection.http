@@ -1,0 +1,56 @@
+http://localhost:1339/api/v1/
+# API Base endpoint
+
+###
+# Get Users
+http://localhost:1339/api/v1/users
+
+###
+# Create User
+POST http://localhost:1339/api/v1/users
+Content-Type: application/json
+
+{
+   "username": "Rolandinio",
+   "password": "12343*3746"
+}
+
+###
+# User Login
+POST http://localhost:1339/api/v1/users/login
+Content-Type: application/json
+{
+   "username": "Rolandinio",
+   "password": "12343*3746"
+}
+
+
+###
+# Get Products
+http://localhost:1339/api/v1/products
+
+###
+# Create a Product
+POST http://localhost:1339/api/v1/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJSb2xhbmRpbmlvIiwiaWF0IjoxNzA1MjUxMzAzfQ.2qdtcxI3fPjT4lmYWWizsZVUMx-0PMe7QguvGavkgQM
+
+{
+    "name": "Biscuit",
+    "price": 11000,
+    "description": "The best digestive biscuits",
+    "categoryId": 2
+}
+
+###
+# Get Categories
+http://localhost:1339/api/v1/categories
+
+###
+# Create Category
+POST http://localhost:1339/api/v1/categories
+Content-Type: application/json
+
+{
+    "name": "Snacks"
+}

@@ -2,7 +2,11 @@ const {PrismaClient} = require('@prisma/client')
 const prisma = new PrismaClient();
 
 async function getProducts(req, res){
-    const products = await prisma.product.findMany()
+    const products = await prisma.product.findMany({
+        include: {
+            category: true
+        }
+    })
     res.send(products)
 }
 

@@ -8,6 +8,7 @@ async function getUsers(req, res) {
 }
 
 async function createUser(req, res) {
+  console.log(req.body)
   const user = await prisma.user.create({
     data: req.body,
   });
@@ -19,7 +20,6 @@ async function loginUser(req, res) {
   let userDetails = req.body;
 
   // check if user exists and if their password matched the password set in the database
-
   try {
     const user = await prisma.user.findUnique({
       where: {

@@ -22,18 +22,18 @@ async function loginUser(req, res) {
   // check if user exists and if their password matched the password set in the database
   try {
     const user = await prisma.user.findUnique({
-      where: {
-        username: userDetails.username,
-      },
-    });
+      where:{
+        username: req.body.username
+      }
+    })
 
-    if (user && user.password === userDetails.password) {
+    if (user.password === userDetails.password) {
       // create a token for them and send it as a response
       let token = createToken({
         id: user.id,
         username: user.username,
       });
-
+      console.log(token)
       res.status(200).json({ message: "Success", token });
     } else
       res

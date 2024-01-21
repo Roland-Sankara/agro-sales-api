@@ -8,6 +8,7 @@ function createToken(data) {
 function verifyToken(req, res, next) {
   let authHeader = req.headers.authorization;
   // `Bearer token` e.g Bearer 290hbuyveyuvfiuefiy
+  // ['Bearer', '29299290i02']
 
   if (authHeader) {
     let token = authHeader.split(" ")[1];

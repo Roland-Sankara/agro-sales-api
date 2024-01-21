@@ -1,9 +1,12 @@
-http://localhost:1339/api/v1/
+# http://localhost:1339/api/v1/
+GET https://agro-sales-api.onrender.com/api/v1
 # API Base endpoint
 
 ###
 # Get Users
-http://localhost:1339/api/v1/users
+# http://localhost:1339/api/v1/users
+
+GET https://agro-sales-api.onrender.com/api/v1/users
 
 ###
 # Create User

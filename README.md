@@ -7,7 +7,6 @@ Product
 - description
 
 User
-- name
 - username
 - password
 - role
